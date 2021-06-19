@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    max-width:1280px;
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+.wrapper{
+    width:100%;
+    max-width:1360px;
+    margin:0 auto;
+    padding:0 40px;
+}
+ul , li{
+    list-style: none;
+    padding:0;
+}
+
+#header{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left:0;
+    right:0;
+    height:80px;
+    background-color: #fff;
+}
+#nav{
+    position: fixed;
+    top:0;
+    left:-300px;
+    width:300px;
+    color:#fff;
+    transition: all 0.5s;
+    z-index:20;
+    opacity: 0;
+    padding:30px;
+}
+#nav a{
+    color:#fff;
+    text-decoration: none;
+}
+#nav li{
+    margin-bottom: 14px;
+}
+/*開いている時*/
+.open #nav{
+    left:0;
+    opacity: 1;
+}
+.toggle{
+    width:30px;
+    height:30px;
+    position: relative;
+    transition:all 0.5s;
+    cursor: pointer;
+    z-index:20;
+}
+/*トグル線*/
+.toggle span{
+    display: block;
+    position: absolute;
+    width:30px;
+    height:2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all 0.5s;
+}
+.toggle span:nth-child(1){
+    top:10px;
+}
+.toggle span:nth-child(2){
+    bottom:10px;
+}
+.open .toggle span{
+    background-color: #fff;
+}
+.open .toggle span:nth-child(1){
+    transform: translateY(4px) rotate(-45deg);
+}
+.open .toggle span:nth-child(2){
+    transform:translateY(-4px) rotate(45deg);
+}
+/*マスク*/
+#mask{
+    display: none;
+    transition:all 0.5s;
+}
+.open #mask{
+    display: block;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background:#000;
+    opacity: .8;
+    z-index: 10;
+    cursor: pointer;
+}
+/*logo*/
+.logo img{
+    width:180px;
+    height:25px;
+}
+
+
+.itemBlock{
+    padding-top: 80px;
+}
+.itemImg{
+    margin-bottom: 42px;
+}
+.itemImg img{
+    width:100%;
+    height:auto;
+}
+.itemImg p{
+    font-size: 0.8rem;
+}
+
+.view{
+    text-align: center;
+    cursor: pointer;
+    color:#333;
+    text-decoration: none;
+}
+
+footer{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 60px !important;
+}
+.sns{
+    display: flex;
+    justify-content: space-between;
+    width:30%;
+}
+.sns a{
+    color:#333;
+    text-decoration: none;
+}
+.sns p{
+    font-size: 0.8rem;
+}
+
+
+
+#about ,#company, #item{
+    padding-top: 115px;
+}
+#about h2, #company h2 , #item h2{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 36px;
+}
+#about p, #company h2{
+    width:60%;
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+}
+
+
+
+#company table{
+    width:600px;
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+}
+#company tr{
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+}
+th , td{
+    font-weight: 400;
+    display: block;
+    padding:20px 0;
+}
+#company th{
+    width:30%;
+}
+td{
+    width:70%;
+}
+.map{
+    margin-top:44px;
+}
+
+
+.page-nation{
+    display: flex;
+    justify-content: center;
+    padding:0;
+}
+.page-nation li{
+    padding:0 20px;
+}
+
+
+.itemAbout{
+    width:800px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 42px;
+}
+.itemAbout img{
+    width:400px;
+    height:400px;
+}
+.itemCap{
+    width: 350px;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.capAbout{
+    width:80%;
+}
+.capAbout li{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+@media screen and (max-width:900px){
+    footer{
+        display: block;
+    }
+    .sns{
+        width:85%;
+    }
+    .map iframe{
+        width:100%;
+    }
+}
